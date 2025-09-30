@@ -8,8 +8,8 @@
     <title>Detalle del Servicio - Airhub Of Pacific</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css"> <!-- tu archivo actual -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- 🚩 añadido CDN -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/templatemo.css">
     <link rel="stylesheet" href="css/custom.css">
 
@@ -54,7 +54,6 @@
 <body>
     <div id="menu"></div>
 
-    <!-- Encabezado -->
     <header class="bg-dark py-5 text-white text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Heavy Maintenance Repair Station Services</h1>
@@ -64,21 +63,18 @@
 
     <div class="container py-5">
         <div class="row">
-            <!-- Columna izquierda: descripción e imágenes -->
             <div class="col-lg-6">
                 <div class="description-box">
                     <h3 id="serviceDescription">Descripción del servicio</h3>
                 </div>
 
                 <div class="text-center mb-3">
-                    <img id="mainImage" src="img/default.jpg" alt="Servicio"
-                        class="img-fluid product-img-circle shadow">
+                    <img id="mainImage" src="img/default.jpg" alt="Servicio" class="img-fluid product-img-circle shadow">
                 </div>
 
                 <div id="imageGallery" class="d-flex justify-content-center flex-wrap"></div>
             </div>
 
-            <!-- Columna derecha: datos, carrito y pagos -->
             <div class="col-lg-6">
                 <h1 class="h2" id="serviceName">Nombre del Servicio</h1>
                 <p class="h3 py-2">Precio: <span id="servicePrice">N/A</span></p>
@@ -100,7 +96,6 @@
                 <h6>Fecha del Servicio:</h6>
                 <input type="date" class="form-control mb-3" id="serviceDate">
 
-                <!-- Formulario de compra -->
                 <form action="contact.html" method="GET">
                     <div class="row">
                         <div class="col-auto">
@@ -131,24 +126,24 @@
                     </div>
                 </form>
 
-                <!-- 🚩 INICIO MÉTODOS DE PAGO -->
                 <div class="mt-4 text-center">
                     <h6>Métodos de Pago Aceptados</h6>
                     <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                        <!-- Visa -->
-                        <i class="fab fa-cc-visa fa-2x text-primary"></i>
-                        <!-- MasterCard -->
-                        <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
-                        <!-- PayPal -->
-                        <i class="fab fa-cc-paypal fa-2x text-info"></i>
+                        <a href="https://www.visa.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                        </a>
+                        <a href="https://www.mastercard.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
+                        </a>
+                        <a href="https://www.paypal.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-paypal fa-2x text-info"></i>
+                        </a>
                     </div>
                 </div>
-                <!-- 🚩 FIN MÉTODOS DE PAGO -->
-            </div>
+                </div>
         </div>
     </div>
 
-    <!-- 🚩 INICIO NAVEGACIÓN -->
     <section class="container my-5 text-center">
         <div class="d-flex justify-content-start">
             <a href="shop.html" class="btn btn-outline-success">
@@ -156,12 +151,8 @@
             </a>
         </div>
     </section>
-    <!-- 🚩 FIN NAVEGACIÓN -->
-
-    <!-- Pie de página -->
     <div id="pie"></div>
 
-    <!-- Scripts -->
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -292,4 +283,3 @@
 </body>
 
 </html>
-
