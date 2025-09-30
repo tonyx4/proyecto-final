@@ -1,0 +1,113 @@
+/*
+Custom Css
+*/
+
+/* --- Carrusel --- */
+.carousel-inner img {
+    width: 100%;        /* ocupar todo el ancho */
+    height: 350px;      /* altura fija */
+    object-fit: cover;  /* recorta sin deformar */
+    display: block;
+}
+
+/* --- Categorías en círculos --- */
+#etiqueta_categorias img {
+    width: 200px;       /* ancho fijo */
+    height: 200px;      /* alto fijo */
+    object-fit: cover;  /* recorta para mantener proporción */
+    border-radius: 50%; /* círculo perfecto */
+    display: block;
+    margin: 0 auto;     /* centra cada imagen */
+}
+
+/* --- Uniformidad en títulos y descripciones --- */
+#etiqueta_categorias h2 {
+    font-size: 1.2rem;     
+    font-weight: 700;     
+    text-align: center;
+    margin-top: 15px;
+    min-height: 45px;      
+}
+
+#etiqueta_categorias p {
+    font-size: 1rem;
+    text-align: center;
+    min-height: 60px;   
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+/* --- Botón centrado y uniforme --- */
+#etiqueta_categorias .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+}
+
+/* === Clases reutilizables para imágenes === */
+
+/* Imagen rectangular uniforme (banners, servicios, fila de 4 fotos) */
+.img-equal-height {
+    width: 100%;
+    height: 250px;      /* puedes ajustar: 200px, 300px según el diseño */
+    object-fit: cover;  /* mantiene proporción y recorta */
+    display: block;
+}
+
+/* Imagen circular uniforme (categorías, avatares, logos) */
+.img-equal-circle {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Imágenes parejas y circulares */
+.img-equal-height {
+  width: 150px;       /* tamaño fijo */
+  height: 150px;      /* cuadrado para que quede uniforme */
+  object-fit: cover;  /* recorte proporcional */
+  border-radius: 50%; /* círculo */
+  display: block;
+  margin: 0 auto;     /* centrar imagen */
+}
+
+/* Cards del mismo tamaño */
+.product-wap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center; /* centra contenido */
+}
+
+.product-wap .card-body {
+  flex-grow: 1;
+  text-align: center; /* centra textos */
+}
+
+.col-md-4 {
+  display: flex;
+}
+
+/* ===================== */
+/* NUEVO: imágenes pequeñas y redondas de productos (shop + shop-single) */
+/* ===================== */
+.product-img-circle {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .product-img-circle {
+    width: 90px;
+    height: 90px;
+  }
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle del Servicio - Airhub Of Pacific</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css"> <!-- tu archivo actual -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- 🚩 añadido CDN -->
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        /* Imagen principal redonda */
+        .product-img-circle {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 4px solid #f1f1f1;
+        }
+
+        /* Caja de descripción del servicio */
+        .description-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Miniaturas de imágenes */
+        .thumbnail-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail-img.active {
+            border-color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <!-- Encabezado -->
+    <header class="bg-dark py-5 text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Heavy Maintenance Repair Station Services</h1>
+            <p class="lead">Innovation-Safety-Beyond</p>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- Columna izquierda: descripción e imágenes -->
+            <div class="col-lg-6">
+                <div class="description-box">
+                    <h3 id="serviceDescription">Descripción del servicio</h3>
+                </div>
+
+                <div class="text-center mb-3">
+                    <img id="mainImage" src="img/default.jpg" alt="Servicio"
+                        class="img-fluid product-img-circle shadow">
+                </div>
+
+                <div id="imageGallery" class="d-flex justify-content-center flex-wrap"></div>
+            </div>
+
+            <!-- Columna derecha: datos, carrito y pagos -->
+            <div class="col-lg-6">
+                <h1 class="h2" id="serviceName">Nombre del Servicio</h1>
+                <p class="h3 py-2">Precio: <span id="servicePrice">N/A</span></p>
+
+                <p class="py-2">
+                    <span class="list-inline-item text-dark">Rating:</span>
+                    <span id="serviceRating"></span>
+                </p>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <h6>Duración:</h6>
+                    </li>
+                    <li class="list-inline-item">
+                        <p class="text-muted" id="serviceTime"></p>
+                    </li>
+                </ul>
+
+                <h6>Fecha del Servicio:</h6>
+                <input type="date" class="form-control mb-3" id="serviceDate">
+
+                <!-- Formulario de compra -->
+                <form action="contact.html" method="GET">
+                    <div class="row">
+                        <div class="col-auto">
+                            <ul class="list-inline pb-3">
+                                <li class="list-inline-item text-right">
+                                    Cantidad de servicios
+                                    <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                </li>
+                                <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span>
+                                </li>
+                                <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row pb-3">
+                        <div class="col d-grid">
+                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="solicitar">
+                                Solicitar Servicio
+                            </button>
+                        </div>
+                        <div class="col d-grid">
+                            <button type="button" class="btn btn-success btn-lg" id="addToCart">
+                                Adicionar Servicio
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- 🚩 INICIO MÉTODOS DE PAGO -->
+                <div class="mt-4 text-center">
+                    <h6>Métodos de Pago Aceptados</h6>
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                        <!-- Visa -->
+                        <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                        <!-- MasterCard -->
+                        <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
+                        <!-- PayPal -->
+                        <i class="fab fa-cc-paypal fa-2x text-info"></i>
+                    </div>
+                </div>
+                <!-- 🚩 FIN MÉTODOS DE PAGO -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 🚩 INICIO NAVEGACIÓN -->
+    <section class="container my-5 text-center">
+        <div class="d-flex justify-content-start">
+            <a href="shop.html" class="btn btn-outline-success">
+                <i class="fas fa-arrow-left"></i> Anterior
+            </a>
+        </div>
+    </section>
+    <!-- 🚩 FIN NAVEGACIÓN -->
+
+    <!-- Pie de página -->
+    <div id="pie"></div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/templatemo.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="basedatos/datos.js"></script>
+    <script src="js/consultas.js"></script>
+
+    <script>
+        // Funciones para manipular el carrito
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart")) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function addToCart(service) {
+            let cart = getCart();
+            cart.push(service);
+            saveCart(cart);
+            actualizarContadorCarritoGlobal();
+            alert(`Servicio "${service.nombre}" añadido al carrito.`);
+        }
+
+        // ========================= CARGA DE FRAGMENTOS =========================
+        async function cargarFragmento(id, url) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                document.getElementById(id).innerHTML = html;
+            } catch (error) {
+                console.error(`Error al cargar el fragmento ${url}:`, error);
+            }
+        }
+
+        // Función para actualizar el contador del carrito en el menú (si existe)
+        function actualizarContadorCarritoGlobal() {
+            let cart = getCart();
+            let countElement = document.getElementById('cart-count');
+            if (countElement) {
+                countElement.textContent = cart.length;
+            }
+        }
+
+        // ========================= VARIABLE GLOBAL =========================
+        let currentService = null;
+
+        // ========================= INICIALIZACIÓN =========================
+        document.addEventListener("DOMContentLoaded", async () => {
+            await cargarFragmento("menu", "menu.html");
+            await cargarFragmento("pie", "pie.html");
+
+            actualizarContadorCarritoGlobal();
+
+            const params = new URLSearchParams(window.location.search);
+            const serviceCode = params.get("codigo");
+
+            if (!serviceCode) {
+                console.error("No se encontró el código del servicio en la URL.");
+                return;
+            }
+
+            const service = Services_List.find(s => s.codigo === serviceCode);
+
+            if (service) {
+                currentService = service;
+
+                document.getElementById("serviceName").textContent = service.nombre;
+                document.getElementById("servicePrice").textContent = service.precio;
+                document.getElementById("serviceTime").textContent = service.tiempo;
+                document.getElementById("serviceDescription").textContent = service.descripcion;
+                document.getElementById("mainImage").src = service.imagen;
+
+                const ratingHTML = '<i class="fa fa-star text-warning"></i>'.repeat(service.rating) +
+                    '<i class="fa fa-star text-muted"></i>'.repeat(5 - service.rating);
+                document.getElementById("serviceRating").innerHTML = ratingHTML;
+
+                const galleryDiv = document.getElementById("imageGallery");
+                if (service.imagenes && service.imagenes.length > 0) {
+                    galleryDiv.innerHTML = '';
+                    service.imagenes.forEach((imgSrc, index) => {
+                        const imgElem = document.createElement("img");
+                        imgElem.src = imgSrc;
+                        imgElem.alt = `Miniatura de ${service.nombre} ${index + 1}`;
+                        imgElem.className = "thumbnail-img" + (index === 0 ? " active" : "");
+                        imgElem.addEventListener("click", () => {
+                            document.getElementById("mainImage").src = imgSrc;
+                            document.querySelectorAll(".thumbnail-img").forEach(img => img.classList.remove("active"));
+                            imgElem.classList.add("active");
+                        });
+                        galleryDiv.appendChild(imgElem);
+                    });
+                }
+
+                const minusBtn = document.getElementById("btn-minus");
+                const plusBtn = document.getElementById("btn-plus");
+                const varValue = document.getElementById("var-value");
+                const addToCartBtn = document.getElementById("addToCart");
+                let quantity = 1;
+
+                minusBtn.addEventListener("click", () => {
+                    if (quantity > 1) {
+                        quantity--;
+                        varValue.textContent = quantity;
+                    }
+                });
+
+                plusBtn.addEventListener("click", () => {
+                    quantity++;
+                    varValue.textContent = quantity;
+                });
+
+                addToCartBtn.addEventListener("click", () => {
+                    const serviceToAdd = {
+                        ...currentService,
+                        cantidad: quantity
+                    };
+                    addToCart(serviceToAdd);
+                });
+
+            } else {
+                console.error("Servicio no encontrado para el código:", serviceCode);
+            }
+        });
+    </script>
+</body>
+
+</html>
+
