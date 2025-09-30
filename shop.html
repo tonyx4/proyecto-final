@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Airhub Of Pacific</title>
+
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="basedatos/datos.js"></script>
+    <script src="js/consultas.js"></script>
+    <script src="js/custom.js"></script>
+
+    <style>
+        /* Imágenes redondas y uniformes (TAMAÑO PEQUEÑO) */
+        .product-img-circle {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            border: 2px solid #f1f1f1;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-img-circle:hover {
+            transform: scale(1.08);
+        }
+
+        /* Cards uniformes */
+        .product-wap {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-align: center;
+            padding: 5px;
+            min-height: 250px;
+        }
+
+        .product-wap .card-body {
+            flex-grow: 1;
+            padding: 6px;
+        }
+
+        .col-md-4 {
+            display: flex;
+        }
+
+        .card {
+            font-size: 0.8rem;
+        }
+
+        .card .h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .card small,
+        .card p {
+            font-size: 0.75rem;
+        }
+
+        /* Overlay de íconos */
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay .btn {
+            padding: 4px 6px;
+            font-size: 0.8rem;
+        }
+
+        /* Panel lateral derecho */
+        .cart-panel {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 400px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-actions button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <header class="bg-dark py-5 text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Heavy Maintenance Repair Station Services</h1>
+            <p class="lead">Innovation-Safety-Beyond</p>
+        </div>
+    </header>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+
+            <div class="col-lg-2">
+                <h5 class="pb-3">Servicios</h5>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorías
+                    </button>
+                    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton" id="category-dropdown"></ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="row" id="etiqueta_productos"></div>
+
+                <section class="container my-5 text-center">
+                    <div class="d-flex justify-content-between">
+                        <a href="about.html" class="btn btn-outline-success">
+                            <i class="fas fa-arrow-left"></i> Anterior
+                        </a>
+                        
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="cart-panel shadow">
+                    <h5>Servicios Seleccionados</h5>
+                    <div id="cart-list"></div>
+                    <hr>
+                    <p><strong>Total de servicios:</strong> <span id="cart-total">0</span></p>
+                    <div class="cart-actions">
+                        <button class="btn btn-sm btn-warning" onclick="clearCart()">Vaciar</button>
+                        <button class="btn btn-sm btn-success" onclick="window.location.href='contact.html'">Solicitar</button>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <h6>Métodos de Pago Aceptados</h6>
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                        <a href="https://www.visa.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                        </a>
+                        <a href="https://www.mastercard.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-mastercard fa-2x text-danger"></i>
+                        </a>
+                        <a href="https://www.paypal.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-cc-paypal fa-2x text-info"></i>
+                        </a>
+                    </div>
+                </div>
+                </div>
+
+        </div>
+    </div>
+
+    <div id="pie"></div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/templatemo.js"></script>
+
+    <script>
+        // Funciones para manipular el carrito, los favoritos y los fragmentos
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart")) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function addToCart(service) {
+            let cart = getCart();
+            cart.push(service);
+            saveCart(cart);
+            updateCartCount();
+            renderCart();
+        }
+
+        function renderCart() {
+            let cart = getCart();
+            let cartList = document.getElementById("cart-list");
+            let cartTotal = document.getElementById("cart-total");
+            cartList.innerHTML = "";
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += 1;
+                cartList.innerHTML += `
+                    <div class="cart-item">
+                        <span>${item.nombre} - ${item.precio}</span>
+                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>`;
+            });
+
+            cartTotal.textContent = total;
+        }
+
+        function removeFromCart(index) {
+            let cart = getCart();
+            cart.splice(index, 1);
+            saveCart(cart);
+            renderCart();
+            updateCartCount();
+        }
+
+        function getFavorites() {
+            return JSON.parse(localStorage.getItem("favorites")) || [];
+        }
+
+        function saveFavorites(favs) {
+            localStorage.setItem("favorites", JSON.stringify(favs));
+        }
+
+        function addToFavorites(service) {
+            let favs = getFavorites();
+            if (!favs.some(f => f.nombre === service.nombre)) {
+                favs.push(service);
+                saveFavorites(favs);
+                alert("Servicio añadido a favoritos ❤");
+            } else {
+                alert("Este servicio ya está en favoritos.");
+            }
+        }
+
+        async function cargarFragmento(id, url) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                document.getElementById(id).innerHTML = html;
+            } catch (error) {
+                console.error(`Error al cargar el fragmento ${url}:`, error);
+            }
+        }
+
+        function updateCartCount() {
+            let cart = getCart();
+            let countElement = document.getElementById('cart-count');
+            if (countElement) {
+                countElement.textContent = cart.length;
+            }
+        }
+
+        function renderCategoriesDropdown() {
+            const dropdownList = document.getElementById('category-dropdown');
+            if (dropdownList) {
+                const categories = ["Inspection", "Maintenance", "Paint Aircraft", "Service Bulletin", "Engineering Orders STC", "Mayor Services", "Routine Services", "Corrosion Control", "Equipment & Supplies"];
+
+                dropdownList.innerHTML = categories.map(category => `
+                    <li><a class="dropdown-item" href="#">${category}</a></li>
+                `).join('');
+            }
+        }
+
+        // Evento principal
+        document.addEventListener("DOMContentLoaded", async () => {
+            await cargarFragmento("menu", "menu.html");
+            await cargarFragmento("pie", "pie.html");
+            updateCartCount();
+            renderCategoriesDropdown();
+
+            let etiqueta_productos = document.getElementById("etiqueta_productos");
+            Services_List.forEach(service => {
+                let div_col = document.createElement("div");
+                div_col.classList.add("col-md-4", "mb-4");
+                div_col.innerHTML = `
+                    <div class="card product-wap rounded-0 shadow-sm">
+                        <div class="position-relative p-3">
+                            <img class="img-fluid product-img-circle" src="${service.imagen}" alt="${service.nombre}">
+                            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                <ul class="list-unstyled">
+                                    <li><button class="btn btn-success text-white" onclick='addToCart(${JSON.stringify(service)})'><i class="fas fa-plane"></i></button></li>
+                                    <li><a class="btn btn-success text-white" href="shop-single.html?codigo=${service.codigo}"><i class="fas fa-eye"></i></a></li>
+                                    <li><button class="btn btn-success text-white" onclick='addToFavorites(${JSON.stringify(service)})'><i class="fas fa-heart"></i></button></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h3">${service.nombre}</h3>
+                            <ul class="list-unstyled d-flex justify-content-center mb-1">
+                                <li>
+                                    ${'<i class="text-warning fa fa-star"></i>'.repeat(service.rating)}
+                                    ${'<i class="text-muted fa fa-star"></i>'.repeat(5 - service.rating)}
+                                </li>
+                            </ul>
+                            <p>${service.precio}</p>
+                        </div>
+                    </div>`;
+                etiqueta_productos.appendChild(div_col);
+            });
+
+            renderCart();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Airhub Of Pacific</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" href="img/apple-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+  <!-- CSS del template -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Fuentes y FontAwesome -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+
+  <!-- Script con datos -->
+  <script src="basedatos/datos.js"></script>
+</head>
+
+<body>
+
+  <!-- Menú dinámico -->
+  <div id="menu"></div>
+
+  <!-- Encabezado -->
+  <header class="bg-dark py-5 text-white text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Heavy Maintenance Repair Station Services</h1>
+      <p class="lead">Innovation-Safety-Beyond</p>
+    </div>
+  </header>
+
+  <!-- Sección Contacto -->
+  <section class="container py-5">
+    <div class="row text-center pt-3">
+      <div class="col-lg-6 m-auto">
+        <h1 class="h1">Contáctanos</h1>
+        <p>
+          Si tienes dudas, consultas o quieres más información sobre nuestros servicios,
+          por favor completa el siguiente formulario y nos pondremos en contacto contigo.
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulario y Mapa -->
+    <div class="container py-5">
+      <div class="row">
+        <!-- Formulario (Izquierda) -->
+        <div class="col-md-6">
+          html <form action="https://formsubmit.co/speedfastairline@gmail.com" method="POST" role="form">
+            <div class="row">
+              <div class="form-group col-md-6 mb-3">
+                <label for="inputname">Nombre</label>
+                <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Tu nombre">
+              </div>
+              <div class="form-group col-md-6 mb-3">
+                <label for="inputemail">Correo</label>
+                <input type="email" class="form-control mt-1" id="email" name="email"
+                  placeholder="Tu correo electrónico">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="inputsubject">Asunto</label>
+              <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Asunto">
+            </div>
+            <div class="mb-3">
+              <label for="inputmessage">Mensaje</label>
+              <textarea class="form-control mt-1" id="message" name="message" placeholder="Escribe tu mensaje"
+                rows="8"></textarea>
+            </div>
+            <div class="row">
+              <div class="col text-end mt-2">
+                <button type="submit" class="btn btn-success btn-lg px-3">Enviar Mensaje</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Mapa (Derecha con espacio) -->
+        <div class="col-md-6 ps-4">
+          <h2 class="mb-3 text-center">Our Location Alfonzo Bonilla Aragon International Airport</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.841679553612!2d-76.38084732596248!3d3.5432406964448915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e36bfc90a7f1c09%3A0x19d17a2c5d84f5e!2sAeropuerto%20Internacional%20Alfonso%20Bonilla%20Arag%C3%B3n%20(CLO)!5e0!3m2!1ses!2sco!4v1695400000000!5m2!1ses!2sco"
+            width="100%" height="390" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Formulario y Mapa -->
+
+  </section>
+
+  <!-- Navegación de páginas -->
+  <section class="container my-5 text-center">
+    <div class="d-flex justify-content-start">
+      <!-- Flecha hacia atrás -->
+      <a href="shop.html" class="btn btn-outline-success">
+        <i class="fas fa-arrow-left"></i> Anterior
+      </a>
+    </div>
+  </section>
+
+  <!-- Pie dinámico -->
+  <div id="pie"></div>
+
+  <!-- Scripts -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/templatemo.js"></script>
+  <script src="js/custom.js"></script>
+
+  <!-- Cargar fragmentos -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarFragmento("menu", "menu.html");
+      cargarFragmento("pie", "pie.html");
+    });
+  </script>
+</body>
+
+</html>

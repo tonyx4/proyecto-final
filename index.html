@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Airhub Of Pacific</title>
+
+    <link rel="apple-touch-icon" href="img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+    <script src="basedatos/datos.js"></script>
+
+    <style>
+        .category-card {
+            max-width: 220px;
+        }
+
+        .category-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <header class="bg-dark py-5 text-white text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Heavy Maintenance Repair Station Services</h1>
+            <p class="lead">Innovation-Safety-Beyond</p>
+        </div>
+    </header>
+
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators"></ol>
+        <div class="carousel-inner"></div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel"
+            role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel"
+            role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+
+    <script>
+        const carrusel_indicators = document.querySelector(".carousel-indicators");
+        elementos_carrusel.forEach((_, indice) => {
+            const li = document.createElement("li");
+            li.setAttribute("data-bs-target", "#template-mo-zay-hero-carousel");
+            li.setAttribute("data-bs-slide-to", indice);
+            if (indice === 0) li.classList.add("active");
+            carrusel_indicators.appendChild(li);
+        });
+
+        const carrusel_inner = document.querySelector(".carousel-inner");
+        elementos_carrusel.forEach((elemento, indice) => {
+            const divItem = document.createElement("div");
+            divItem.classList.add("carousel-item");
+            if (indice === 0) divItem.classList.add("active");
+
+            divItem.innerHTML = `
+                <div class="container">
+                    <div class="row p-5 align-items-center">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid hero-img" src="${elemento.imagen}" alt="${elemento.nombre}">
+                        </div>
+                        <div class="col-lg-6 mb-0">
+                            <div class="text-align-left">
+                                <h1 class="h1 text-success fw-bold">${elemento.nombre}</h1>
+                                <p class="lead">${elemento.descripcion}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            carrusel_inner.appendChild(divItem);
+        });
+    </script>
+
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-8 m-auto">
+                <h2 class="h1 fw-bold text-uppercase">OUR SPECIALITIES</h2>
+                <p class="text-muted">
+                    Honeycomb Composite Systems · Sheet Metal · Avionics · Hydraulic & Power
+                </p>
+            </div>
+        </div>
+        <div id="etiqueta_categorias" class="row justify-content-center"></div>
+    </section>
+
+    <script>
+        let etiqueta_categorias = document.getElementById("etiqueta_categorias");
+
+        lista_categorias.forEach(categoria => {
+            let div = document.createElement("div");
+            div.classList.add("col-12", "col-md-6", "col-lg-2", "text-center", "category-card", "mb-4");
+            div.innerHTML = `
+                <a href="#">
+                    <img src="${categoria.imagen}" class="rounded-circle img-fluid border shadow-sm category-img" alt="${categoria.nombre}">
+                </a>
+                <h3 class="h5 mt-3 mb-2 fw-bold">${categoria.nombre}</h3>
+                <p class="text-muted small">${categoria.descripcion}</p>
+                <a class="btn btn-success btn-sm mt-2" href="shop.html">Show me</a>`;
+            etiqueta_categorias.appendChild(div);
+        });
+    </script>
+
+     <!-- Navegación de páginas -->
+    <section class="container my-5 text-center">
+        <div class="d-flex justify-content-end">
+           
+            <!-- Flecha hacia adelante -->
+            <a href="about.html" class="btn btn-outline-success">
+                Siguiente <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <div id="pie"></div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/templatemo.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            await cargarFragmento("menu", "menu.html");
+            await cargarFragmento("pie", "pie.html");
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>
