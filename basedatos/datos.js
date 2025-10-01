@@ -11,7 +11,7 @@ const elementos_carrusel = [
   {
     nombre: "Preventive and Scheduled Maintenance Programs",
     descripcion: "service A-Check, B-Check",
-    imagen: "img/preventive.jpg",
+    imagen: "img/prevent.jpg",
   },
   {
     nombre: "Major Maintenance Services",
@@ -94,7 +94,6 @@ const lista_categorias = [
     imagen: "img/equipment-and-supplies.jpg",
   },
 ];
-
 const Serviceslist = [
   {
     codigo: "image 1",
@@ -102,28 +101,24 @@ const Serviceslist = [
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "101",
   },
-
   {
     codigo: "image 2",
     nombre: "Repair",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "102",
   },
-
   {
     codigo: "image 3",
     nombre: "overhaul",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "103",
   },
-
   {
     codigo: "image 4",
     nombre: "Modification_STC",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "104",
   },
-
   {
     codigo: "image 5",
     nombre: "Services Boletin",
@@ -137,42 +132,36 @@ const Serviceslist = [
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "106",
   },
-
   {
     codigo: "image 7",
     nombre: "B-Check",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "107",
   },
-
   {
     codigo: "image 8",
     nombre: "C-Check",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "108",
   },
-
   {
     codigo: "image 9",
     nombre: "D-Check",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "109",
   },
-
   {
     codigo: "image 10",
     nombre: "Control_Corrotion_Program",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "110",
   },
-
   {
     codigo: "image 11",
     nombre: "Overnight",
     descripcion: "Sheet_Metal_Composite_Avionic_Hydraulic_Power",
     codigo_categoria: "111",
   },
-
   {
     codigo: "image 12",
     nombre: "Equipment and Supplies",
@@ -180,10 +169,8 @@ const Serviceslist = [
     codigo_categoria: "112",
   },
 ];
-
 //lista que representa el carrito de compras del usuario o typo de servicio
 const Services = [];
-
 // ===============================
 // LISTA DE SERVICIOS AIRHUB (Centralizada para shop.html y shop-single.html)
 // ===============================
