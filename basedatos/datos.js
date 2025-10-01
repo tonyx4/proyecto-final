@@ -11,7 +11,7 @@ const elementos_carrusel = [
   {
     nombre: "Preventive and Scheduled Maintenance Programs",
     descripcion: "service A-Check, B-Check",
-    imagen: "img/preventive.jpg",
+    imagen: "img/prevent.jpg",
   },
   {
     nombre: "Major Maintenance Services",
@@ -203,7 +203,7 @@ const Services_List = [
     nombre: "Repair",
     descripcion: "Corrective and Preventive Repair Services",
     imagen: "img/repairs.jpg",
-    imagenes: ["img/repairs.jpg", "img/repairs2.jpg"],
+    imagenes: ["img/repair.jpg", "img/repair2.jpg"],
     precio: "By condition",
     tiempo:
       "By Order to Manufacturer I.A.W: MM,SRM,OHM,CPM, & Aeronautical Regulations",
