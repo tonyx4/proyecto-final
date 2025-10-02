@@ -23,7 +23,7 @@ const elementos_carrusel = [
 const lista_categorias = [
   {
     codigo: "101",
-    nombre: "Inspeccion",
+    nombre: "Inspection",
     descripcion: "Inspection, Repair & Overhaul Services",
     imagen: "img/inspection.jpg",
   },
