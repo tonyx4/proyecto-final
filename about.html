@@ -19,24 +19,95 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
 
     <style>
-        /* Ajuste de tamaño uniforme y centrado para imágenes */
+        /* --- Estilos base existentes --- */
         .img-equal-height {
             max-width: 300px;
-            /* ancho máximo */
             max-height: 200px;
-            /* alto máximo */
             width: 100%;
             height: auto;
             object-fit: cover;
             margin: 0 auto;
-            /* centra la imagen */
             display: block;
         }
 
-        /* Color verde para los títulos */
         .titulo-verde {
             color: #28a745;
-            /* Verde Bootstrap */
+        }
+
+        /* ✅ Ajuste global de imágenes para que no se salgan en móviles */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ✅ Encabezado adaptable */
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* ✅ Ajustes para dispositivos medianos y pequeños */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .img-equal-height {
+                max-width: 90%;
+                max-height: none;
+            }
+
+            .row.text-center > div {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* ✅ Ajustes para celulares */
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+                text-align: justify;
+            }
+
+            .titulo-verde {
+                font-size: 1.1rem;
+            }
+
+            .img-equal-height {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 1rem;
+            }
+
+            .d-flex {
+                flex-direction: column !important;
+                align-items: center;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
         }
     </style>
 </head>
@@ -58,34 +129,30 @@
     <section class="container my-5">
         <h2 class="text-center mb-4">Quiénes Somos</h2>
         <p class="text-center mb-5">
-            En<strong>Airhub Of Pacific</strong>Somos un MRO- AERONAUTICAL MAINTENANCE COMPLEX BIG HEAVY MAINTENANCE
-            REPAIR STATION SERVICE &
-            AVIONIC & SHEET METAL & ENGINES & HYDRAULICS & HONEYCOMB COMPOSITE SYSTEMS & UNIVERSITY & AIR LINE GROUP
-            INC..
+            En <strong>Airhub Of Pacific</strong> somos un MRO - AERONAUTICAL MAINTENANCE COMPLEX BIG HEAVY MAINTENANCE
+            REPAIR STATION SERVICE & AVIONIC & SHEET METAL & ENGINES & HYDRAULICS & HONEYCOMB COMPOSITE SYSTEMS &
+            UNIVERSITY & AIR LINE GROUP INC.
         </p>
 
         <div class="row text-center">
             <div class="col-md-4 mb-4">
                 <h4 class="fw-bold titulo-verde">Historia</h4>
                 <p>
-                    Airhub Of Pacific es una compañía de la corporación
-                    Speed Fast Aviation Services de los Estados Unidos,
-                    nace para ofrecer servicios especializados de mantenimiento
-                    bajo regulaciones aeronáuticas.
+                    Airhub Of Pacific es una compañía de la corporación Speed Fast Aviation Services de los Estados
+                    Unidos, nace para ofrecer servicios especializados de mantenimiento bajo regulaciones aeronáuticas.
                 </p>
             </div>
             <div class="col-md-4 mb-4">
                 <h4 class="fw-bold titulo-verde">Misión</h4>
                 <p>
-                    Brindar soluciones integrales de mantenimiento de aeronaves, garantizando la seguridad operacional
-                    y la satisfacción de nuestros clientes mediante procesos eficientes y personal altamente capacitado.
+                    Brindar soluciones integrales de mantenimiento de aeronaves, garantizando la seguridad operacional y
+                    la satisfacción de nuestros clientes mediante procesos eficientes y personal altamente capacitado.
                 </p>
             </div>
             <div class="col-md-4 mb-4">
                 <h4 class="fw-bold titulo-verde">Visión</h4>
                 <p>
-                    Ser un referente en el sector aeronáutico de la región, reconocidos por la excelencia en el
-                    servicio,
+                    Ser un referente en el sector aeronáutico de la región, reconocidos por la excelencia en el servicio,
                     la innovación tecnológica y el compromiso con la seguridad aérea.
                 </p>
             </div>
@@ -95,11 +162,11 @@
     <!-- Imágenes ilustrativas -->
     <section class="container my-5 text-center">
         <div class="row align-items-stretch">
-            <div class="col-md-6 mb-4 d-flex">
+            <div class="col-md-6 mb-4 d-flex justify-content-center">
                 <img src="img/clientes.jpg" alt="Clientes Satisfechos"
                     class="img-fluid rounded shadow img-equal-height">
             </div>
-            <div class="col-md-6 mb-4 d-flex">
+            <div class="col-md-6 mb-4 d-flex justify-content-center">
                 <img src="img/preventive.JPG" alt="Nuestros Servicios"
                     class="img-fluid rounded shadow img-equal-height">
             </div>
@@ -137,13 +204,11 @@
 
     <!-- Navegación de páginas -->
     <section class="container my-5 text-center">
-        <div class="d-flex justify-content-between">
-            <!-- Flecha hacia atrás -->
-            <a href="index.html" class="btn btn-outline-success">
+        <div class="d-flex justify-content-between flex-wrap">
+            <a href="index.html" class="btn btn-outline-success mb-2">
                 <i class="fas fa-arrow-left"></i> Anterior
             </a>
-            <!-- Flecha hacia adelante -->
-            <a href="shop.html" class="btn btn-outline-success">
+            <a href="shop.html" class="btn btn-outline-success mb-2">
                 Siguiente <i class="fas fa-arrow-right"></i>
             </a>
         </div>
@@ -170,3 +235,4 @@
 </body>
 
 </html>
+
