@@ -111,3 +111,85 @@ Custom Css
     height: 90px;
   }
 }
+
+/* =========================================================== */
+/* === NUEVO BLOQUE: AJUSTES RESPONSIVE PARA PC, TABLET Y MÓVIL === */
+/* =========================================================== */
+
+/* --- Carrusel --- */
+@media (max-width: 992px) {
+  .carousel-inner img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-inner img {
+    height: 200px;
+  }
+}
+
+/* --- Categorías --- */
+@media (max-width: 992px) {
+  #etiqueta_categorias img {
+    width: 150px;
+    height: 150px;
+  }
+  #etiqueta_categorias h2 {
+    font-size: 1rem;
+  }
+  #etiqueta_categorias p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #etiqueta_categorias img {
+    width: 120px;
+    height: 120px;
+  }
+  #etiqueta_categorias h2 {
+    font-size: 0.95rem;
+  }
+  #etiqueta_categorias p {
+    font-size: 0.85rem;
+  }
+}
+
+/* --- Productos: columnas adaptativas --- */
+@media (min-width: 992px) {
+  .col-md-4 {
+    width: 33.333%;
+  }
+}
+@media (max-width: 991px) and (min-width: 577px) {
+  .col-md-4 {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  .col-md-4 {
+    width: 100%;
+  }
+}
+
+/* --- Cards y botones en móviles --- */
+@media (max-width: 768px) {
+  .product-wap .card-body {
+    padding: 10px;
+  }
+  .product-wap .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
+
+/* --- Textos generales --- */
+@media (max-width: 576px) {
+  h2, h3, h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
