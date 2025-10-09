@@ -58,6 +58,7 @@ function agregarAlCarrito(codigoServicio, cantidad = 1) {
         if (typeof renderCart === 'function') {
             renderCart();
         }
+        mostrarNotificacion("✅ Producto agregado al carrito");
     }
 }
 
@@ -78,6 +79,7 @@ function eliminarDelCarrito(codigoServicio) {
         if (typeof renderCart === 'function') {
             renderCart();
         }
+        mostrarNotificacion("🗑️ Producto eliminado del carrito", "error");
     }
 }
 
@@ -125,6 +127,7 @@ function eliminarDelCarritoYActualizar(index) {
         localStorage.setItem("cart", JSON.stringify(cart));
         renderCart();
         actualizarContadorCarritoGlobal();
+        mostrarNotificacion("🗑️ Producto eliminado del carrito", "error");
     }
 }
 
@@ -139,3 +142,52 @@ function actualizarContadorCarritoGlobal() {
         contadorElemento.textContent = cart.length;
     }
 }
+
+
+
+/* ============================================================= */
+/* NUEVO BLOQUE: OPTIMIZACIÓN VISUAL Y NOTIFICACIONES */
+/* ============================================================= */
+
+/**
+ * Muestra una notificación flotante (tipo toast) en la esquina inferior derecha.
+ * @param {string} mensaje - Texto a mostrar.
+ * @param {string} tipo - "success" o "error".
+ */
+function mostrarNotificacion(mensaje, tipo = "success") {
+    const notificacion = document.createElement("div");
+    notificacion.textContent = mensaje;
+    notificacion.style.position = "fixed";
+    notificacion.style.bottom = "20px";
+    notificacion.style.right = "20px";
+    notificacion.style.background = tipo === "success" ? "#198754" : "#dc3545";
+    notificacion.style.color = "white";
+    notificacion.style.padding = "10px 20px";
+    notificacion.style.borderRadius = "8px";
+    notificacion.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
+    notificacion.style.zIndex = "9999";
+    notificacion.style.fontSize = "1rem";
+    notificacion.style.opacity = "0";
+    notificacion.style.transition = "opacity 0.5s ease-in-out";
+
+    document.body.appendChild(notificacion);
+    setTimeout(() => { notificacion.style.opacity = "1"; }, 50);
+    setTimeout(() => { notificacion.style.opacity = "0"; }, 2500);
+    setTimeout(() => { notificacion.remove(); }, 3000);
+}
+
+/**
+ * Ejecuta funciones iniciales al cargar el documento.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+    try {
+        if (typeof actualizarContadorCarritoGlobal === 'function') {
+            actualizarContadorCarritoGlobal();
+        }
+        if (typeof renderCart === 'function') {
+            renderCart();
+        }
+    } catch (error) {
+        console.warn("Error al iniciar el carrito:", error);
+    }
+});
