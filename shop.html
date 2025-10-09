@@ -146,7 +146,6 @@
                         <a href="about.html" class="btn btn-outline-success">
                             <i class="fas fa-arrow-left"></i> Anterior
                         </a>
-                        
                     </div>
                 </section>
             </div>
@@ -159,7 +158,7 @@
                     <p><strong>Total de servicios:</strong> <span id="cart-total">0</span></p>
                     <div class="cart-actions">
                         <button class="btn btn-sm btn-warning" onclick="clearCart()">Vaciar</button>
-                        <button class="btn btn-sm btn-success" onclick="window.location.href='contact.html'">Solicitar</button>
+                        <button class="btn btn-sm btn-success" onclick="window.location.href='contac.html'">Solicitar</button>
                     </div>
                 </div>
 
@@ -177,7 +176,7 @@
                         </a>
                     </div>
                 </div>
-                </div>
+            </div>
 
         </div>
     </div>
@@ -232,6 +231,13 @@
             let cart = getCart();
             cart.splice(index, 1);
             saveCart(cart);
+            renderCart();
+            updateCartCount();
+        }
+
+        // ✅ Nueva función para vaciar carrito
+        function clearCart() {
+            localStorage.removeItem("cart");
             renderCart();
             updateCartCount();
         }
@@ -301,7 +307,7 @@
                             <img class="img-fluid product-img-circle" src="${service.imagen}" alt="${service.nombre}">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><button class="btn btn-success text-white" onclick='addToCart(${JSON.stringify(service)})'><i class="fas fa-plane"></i></button></li>
+                                    <li><button class="btn btn-success text-white" onclick='addToCart(${JSON.stringify(service).replace(/'/g, "&apos;")})'><i class="fas fa-plane"></i></button></li>
                                     <li><a class="btn btn-success text-white" href="shop-single.html?codigo=${service.codigo}"><i class="fas fa-eye"></i></a></li>
                                     <li><button class="btn btn-success text-white" onclick='addToFavorites(${JSON.stringify(service)})'><i class="fas fa-heart"></i></button></li>
                                 </ul>
