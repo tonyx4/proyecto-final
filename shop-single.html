@@ -14,14 +14,17 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <style>
-        /* Imagen principal redonda */
+        /* Imagen principal redonda (ajustada para responsive) */
         .product-img-circle {
-            width: 300px;
-            height: 300px;
+            /* ✅ Ajuste responsive: permitir escalado manteniendo proporción */
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 50%;
             margin: 0 auto;
             border: 4px solid #f1f1f1;
+            display: block;
         }
 
         /* Caja de descripción del servicio */
@@ -43,10 +46,82 @@
             margin: 5px;
             cursor: pointer;
             border: 2px solid transparent;
+            border-radius: 6px;
         }
 
         .thumbnail-img.active {
             border-color: #28a745;
+        }
+
+        /* ✅ Ajustes generales para que no se salga nada en pantallas pequeñas */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container.py-5 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* ✅ Mejor lectura y espaciado en móviles */
+        @media (max-width: 992px) {
+            .product-img-circle {
+                max-width: 260px;
+            }
+
+            .thumbnail-img {
+                width: 64px;
+                height: 64px;
+            }
+
+            .description-box {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .h2, .h1, .h3 {
+                word-break: break-word;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-img-circle {
+                max-width: 200px;
+            }
+
+            .thumbnail-img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .description-box {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+
+            /* apilar botones/controles inline en móviles */
+            .list-inline {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .list-inline-item {
+                width: auto;
+            }
+
+            .badge.bg-secondary {
+                font-size: 1rem;
+                padding: 0.45rem 0.7rem;
+            }
+
+            .btn.btn-success {
+                padding: 0.45rem 0.9rem;
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
@@ -96,7 +171,8 @@
                 <h6>Fecha del Servicio:</h6>
                 <input type="date" class="form-control mb-3" id="serviceDate">
 
-                <form action="contact.html" method="GET">
+                <!-- ✅ Form action actualizado para mantener consistencia con tus archivos (contac.html) -->
+                <form action="contac.html" method="GET">
                     <div class="row">
                         <div class="col-auto">
                             <ul class="list-inline pb-3">
@@ -140,7 +216,7 @@
                         </a>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -252,19 +328,25 @@
                 const minusBtn = document.getElementById("btn-minus");
                 const plusBtn = document.getElementById("btn-plus");
                 const varValue = document.getElementById("var-value");
+                const hiddenQty = document.getElementById("product-quanity"); // ✅ campo oculto
                 const addToCartBtn = document.getElementById("addToCart");
                 let quantity = 1;
+
+                // Inicializar campo oculto (por si el usuario usa submit sin tocar plus/minus)
+                hiddenQty.value = quantity;
 
                 minusBtn.addEventListener("click", () => {
                     if (quantity > 1) {
                         quantity--;
                         varValue.textContent = quantity;
+                        hiddenQty.value = quantity; // ✅ actualizar campo oculto
                     }
                 });
 
                 plusBtn.addEventListener("click", () => {
                     quantity++;
                     varValue.textContent = quantity;
+                    hiddenQty.value = quantity; // ✅ actualizar campo oculto
                 });
 
                 addToCartBtn.addEventListener("click", () => {
