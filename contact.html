@@ -22,6 +22,72 @@
 
   <!-- Script con datos -->
   <script src="basedatos/datos.js"></script>
+
+  <style>
+    /* ✅ Ajustes responsive para contact.html */
+    img, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Espaciado interior más suave en móviles */
+    @media (max-width: 768px) {
+      .container.py-5 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      header .display-4 {
+        font-size: 1.6rem;
+      }
+
+      .lead {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Mejor lectura en pantallas pequeñas */
+    @media (max-width: 576px) {
+      .display-4 {
+        font-size: 1.4rem;
+      }
+
+      .form-control {
+        font-size: 0.95rem;
+      }
+
+      /* Apila y ajusta botones en móvil */
+      .row.pb-3 .col.d-grid {
+        width: 100%;
+      }
+    }
+
+    /* Hacer el iframe (mapa) responsive por proporción */
+    .map-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Pequeños estilos para que el formulario respire */
+    form .form-group label {
+      font-weight: 600;
+    }
+
+    .btn-success.btn-lg {
+      min-height: 44px;
+    }
+  </style>
 </head>
 
 <body>
@@ -54,7 +120,8 @@
       <div class="row">
         <!-- Formulario (Izquierda) -->
         <div class="col-md-6">
-          html <form action="https://formsubmit.co/speedfastairline@gmail.com" method="POST" role="form">
+          <!-- Nota: se corrigió un pequeño typo aquí (se eliminó "html " que estaba antes del form) -->
+          <form action="https://formsubmit.co/speedfastairline@gmail.com" method="POST" role="form">
             <div class="row">
               <div class="form-group col-md-6 mb-3">
                 <label for="inputname">Nombre</label>
@@ -86,11 +153,15 @@
         <!-- Mapa (Derecha con espacio) -->
         <div class="col-md-6 ps-4">
           <h2 class="mb-3 text-center">Our Location Alfonzo Bonilla Aragon International Airport</h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.841679553612!2d-76.38084732596248!3d3.5432406964448915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e36bfc90a7f1c09%3A0x19d17a2c5d84f5e!2sAeropuerto%20Internacional%20Alfonso%20Bonilla%20Arag%C3%B3n%20(CLO)!5e0!3m2!1ses!2sco!4v1695400000000!5m2!1ses!2sco"
-            width="100%" height="390" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+
+          <!-- Envoltorio responsive para el iframe -->
+          <div class="map-responsive">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.841679553612!2d-76.38084732596248!3d3.5432406964448915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e36bfc90a7f1c09%3A0x19d17a2c5d84f5e!2sAeropuerto%20Internacional%20Alfonso%20Bonilla%20Arag%C3%B3n%20(CLO)!5e0!3m2!1ses!2sco!4v1695400000000!5m2!1ses!2sco"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
         </div>
       </div>
     </div>
